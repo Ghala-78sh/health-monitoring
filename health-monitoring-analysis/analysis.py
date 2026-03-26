@@ -4,14 +4,14 @@ from sklearn.linear_model import LinearRegression
 import numpy as np
 
 # ==========================
-# 1️⃣ قراءة البيانات
+#  قراءة البيانات
 # ==========================
 data = pd.read_csv("heart_data.csv")
 print("Dataset Preview:")
 print(data.head())
 
 # ==========================
-# 2️⃣ تحليل معدل نبض القلب واكتشاف القيم العالية
+#  تحليل معدل نبض القلب واكتشاف القيم العالية
 # ==========================
 avg_hr = data["HeartRate"].mean()
 print(f"\nAverage Heart Rate: {avg_hr:.1f}")
@@ -21,7 +21,7 @@ print("\nHigh Heart Rate Records:")
 print(high_hr)
 
 # ==========================
-# 3️⃣ رسم بياني لتتبع نبض القلب
+# رسم بياني لتتبع نبض القلب
 # ==========================
 plt.plot(data["Day"], data["HeartRate"], marker='o')
 plt.title("Heart Rate Trend")
@@ -31,7 +31,7 @@ plt.grid(True)
 plt.show()
 
 # ==========================
-# 4️⃣ Insight ذكي (الخيار A)
+#  Insight ذكي 
 # ==========================
 if data["SleepHours"].mean() < 6.5:
     print("\nInsight: Average sleep is low. Heart rate may increase due to insufficient rest.")
@@ -39,7 +39,7 @@ else:
     print("\nInsight: Sleep hours are adequate. Heart rate is likely normal.")
 
 # ==========================
-# 5️⃣ Machine Learning Prediction (الخيار C)
+#  Machine Learning Prediction 
 # ==========================
 # تحضير البيانات
 X = data["SleepHours"].values.reshape(-1, 1)  # feature: SleepHours
